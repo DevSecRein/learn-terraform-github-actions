@@ -184,7 +184,7 @@ resource "aws_internet_gateway" "igw" {
 
 
 resource "aws_eip" "nat" {
-  vpc = true
+  domain = "vpc"
 
   tags = {
     Name = "nat"
@@ -210,6 +210,7 @@ resource "aws_route_table" "private" {
       cidr_block                 = "0.0.0.0/0"
       nat_gateway_id             = aws_nat_gateway.nat.id
       carrier_gateway_id         = ""
+      core_network_arn           = ""
       destination_prefix_list_id = ""
       egress_only_gateway_id     = ""
       gateway_id                 = ""
@@ -237,6 +238,7 @@ resource "aws_route_table" "public" {
       gateway_id                 = aws_internet_gateway.igw.id
       nat_gateway_id             = ""
       carrier_gateway_id         = ""
+      core_network_arn           = ""
       destination_prefix_list_id = ""
       egress_only_gateway_id     = ""
       instance_id                = ""
