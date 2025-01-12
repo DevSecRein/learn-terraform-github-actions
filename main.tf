@@ -89,7 +89,7 @@ resource "aws_security_group" "app1-sg01-servers" {
 
 resource "aws_subnet" "public-sa-east-1a" {
   vpc_id                  = aws_vpc.app1.id
-  cidr_block              = "10.32.1.0/24"
+  cidr_block              = "10.17.1.0/24"
   availability_zone       = "sa-east-1a"
   map_public_ip_on_launch = true
 
@@ -103,7 +103,7 @@ resource "aws_subnet" "public-sa-east-1a" {
 
 resource "aws_subnet" "public-sa-east-1b" {
   vpc_id                  = aws_vpc.app1.id
-  cidr_block              = "10.32.2.0/24"
+  cidr_block              = "10.17.2.0/24"
   availability_zone       = "sa-east-1b"
   map_public_ip_on_launch = true
 
@@ -118,7 +118,7 @@ resource "aws_subnet" "public-sa-east-1b" {
 
 resource "aws_subnet" "public-sa-east-1c" {
   vpc_id                  = aws_vpc.app1.id
-  cidr_block              = "10.32.3.0/24"
+  cidr_block              = "10.17.3.0/24"
   availability_zone       = "sa-east-1c"
   map_public_ip_on_launch = true
 
@@ -133,7 +133,7 @@ resource "aws_subnet" "public-sa-east-1c" {
 #these are for private
 resource "aws_subnet" "private-sa-east-1a" {
   vpc_id            = aws_vpc.app1.id
-  cidr_block        = "10.32.11.0/24"
+  cidr_block        = "10.17.11.0/24"
   availability_zone = "sa-east-1a"
 
   tags = {
@@ -146,7 +146,7 @@ resource "aws_subnet" "private-sa-east-1a" {
 
 resource "aws_subnet" "private-sa-east-1b" {
   vpc_id            = aws_vpc.app1.id
-  cidr_block        = "10.32.12.0/24"
+  cidr_block        = "10.17.12.0/24"
   availability_zone = "sa-east-1b"
 
   tags = {
@@ -160,7 +160,7 @@ resource "aws_subnet" "private-sa-east-1b" {
 
 resource "aws_subnet" "private-sa-east-1c" {
   vpc_id            = aws_vpc.app1.id
-  cidr_block        = "10.32.13.0/24"
+  cidr_block        = "10.17.13.0/24"
   availability_zone = "sa-east-1c"
 
   tags = {
